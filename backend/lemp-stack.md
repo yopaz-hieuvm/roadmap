@@ -43,9 +43,9 @@ Apache không hỗ trợ http2 hiệu quả bằng nginx do http2 tận dụng t
 Tóm lại, các hệ thống cũ thường sử dụng apache, đối với các hệ thống hiện đại, nginx được sử dụng nhiều hơn
 
 ## HTTP1 khác gì HTTP2?
-http2 được phát triển nhằm khắc phục các hạn chế về hiệu năng của HTTP1
-HTTP1 truyền dữ liệu dưới dạng văn bản và thường phải mở nhiều kết nối để tải toàn bộ nội dung của một trang web
-HTTP2 sử dụng định dạng nhị phân, cho phép gửi nhiều yêu cầu cùng lúc trên một kết nối duy nhất, đồng thời hỗ trợ nén header và Server Push.
+http2 được phát triển nhằm khắc phục các hạn chế về hiệu năng của http1
+http1 truyền dữ liệu dưới dạng văn bản và thường phải mở nhiều kết nối để tải toàn bộ nội dung của một trang web
+http2 sử dụng định dạng nhị phân, cho phép gửi nhiều yêu cầu cùng lúc trên một kết nối duy nhất, đồng thời hỗ trợ nén header và Server Push.
 Nhờ đó, http2 giúp giảm độ trễ, tăng tốc độ tải trang và tối ưu băng thông tốt hơn so với http1
 
 ##  VPS là gì?
