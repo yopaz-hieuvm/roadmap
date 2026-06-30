@@ -1,7 +1,7 @@
 ## SQL Basic
 
-* SQL là ngôn ngữ dùng để làm việc với cơ sở dữ liệu quan hệ.
-* Dùng để tạo bảng, thêm, sửa, xóa và truy vấn dữ liệu.
+* SQL là ngôn ngữ dùng để làm việc với cơ sở dữ liệu quan hệ
+* Dùng để tạo bảng, thêm, sửa, xóa và truy vấn dữ liệu
 
 **Các câu lệnh cơ bản**
 
@@ -16,20 +16,20 @@ DROP
 ```
 ## JOIN
 
-Dùng để kết hợp dữ liệu từ nhiều bảng.
+Dùng để kết hợp dữ liệu từ nhiều bảng
 
 **Các loại JOIN**
 
-* **INNER JOIN**: Lấy dữ liệu khớp ở cả hai bảng.
-* **LEFT JOIN**: Lấy toàn bộ dữ liệu bảng trái.
-* **RIGHT JOIN**: Lấy toàn bộ dữ liệu bảng phải.
-* **FULL JOIN**: Lấy toàn bộ dữ liệu của hai bảng.
-* **CROSS JOIN**: Kết hợp mọi dòng của hai bảng.
-* **SELF JOIN**: Join với chính bảng đó.
+* **INNER JOIN**: Lấy dữ liệu khớp ở cả hai bảng
+* **LEFT JOIN**: Lấy toàn bộ dữ liệu bảng trái
+* **RIGHT JOIN**: Lấy toàn bộ dữ liệu bảng phải
+* **FULL JOIN**: Lấy toàn bộ dữ liệu của hai bảng
+* **CROSS JOIN**: Kết hợp mọi dòng của hai bảng
+* **SELF JOIN**: Join với chính bảng đó
 
 ## Aggregate
 
-Dùng để thống kê dữ liệu.
+Dùng để thống kê dữ liệu và trả về 1 giá trị
 
 **Các hàm phổ biến**
 
@@ -43,35 +43,79 @@ Dùng để thống kê dữ liệu.
 
 * `MIN()`
 
-* `GROUP BY`: Nhóm dữ liệu.
+* `GROUP BY`: Nhóm dữ liệu
 
-* `HAVING`: Lọc dữ liệu sau khi `GROUP BY`.
+* `HAVING`: Lọc dữ liệu sau khi `GROUP BY`
 
 
 ## Database Design
 
-Thiết kế cấu trúc database để:
+Thiết kế cấu trúc database để
 
-* Tránh dữ liệu trùng lặp.
-* Dễ mở rộng.
-* Dễ bảo trì.
-* Đảm bảo tính toàn vẹn dữ liệu.
+* Tránh dữ liệu trùng lặp
+* Dễ mở rộng
+* Dễ bảo trì
+* Đảm bảo tính toàn vẹn dữ liệu
+* Tăng hiệu năng truy vấn
 
+### Quy trình thiết kế Database
+1. Phân tích yêu cầu
+* Hiểu bải toán cần giải quyết
+* Xác đinh nghiệp vụ hệ thống
+* Xác định dữ liệu cần lưu trữ
+2. Xác định thực thể
+* Xác định các đối tượng chính của hệ thống
+* Mỗi Entity thường tương ứng với 1 bảng trong database
+3. Xác định atrribute
+* xác định trường dữ liệu của mỗi entity
+* lựa chọn kiểu dữ liệu phù hợp
+* xác định cột bắt buộc và cột tùy chọn
+4. Xác định Relationship
+* Thiết lập mỗi quan hệ giữa các bảng ( 1-1, 1-N, N-N)
+5. Chuẩn hóa dữ liệu (Normalization) <br>
+Mục tiêu:
+- Loại bỏ dữ liệu dư thừa
+- Tránh bất nhất dữ liệu
+- Giảm lỗi khi cập nhật
+- Dễ bảo trì và mở rộng<br>
+Các mức chuẩn thường gặp:  1NF - 2NF - 3NF
+6. Thiết lập Constraint<br>
+Đảm bảo dữ liệu luôn hợp lệ
+- Primary Key
+- Foreign Key 
+- Unique 
+- Not Null 
+- Check 
+- Default
+7. Thiết kế Index<br>
+Tạo Index cho các cột thường được sử dụng trong:
+- WHERE
+- JOIN
+- ORDER BY
+- GROUP BY
+8. Kiểm tra và tối ưu
+  - Kiểm tra các câu truy vấn
+  - Phân tích Execution Plan
+  - Tối ưu Index
+  - Điều chỉnh cấu trúc bảng nếu cần
+  - Đảm bảo Database đáp ứng yêu cầu về hiệu năng
 
 ## Migrations
 
-Quản lý thay đổi cấu trúc database bằng code.
+Quản lý thay đổi cấu trúc database bằng code
 
 **Lợi ích**
 
-* Tạo và sửa bảng.
-* Đồng bộ database giữa các môi trường.
-* Có thể rollback khi cần.
+* Tạo và sửa bảng
+* Quản lý phiên bản Database
+* Đồng bộ database giữa các môi trường
+* Có thể rollback khi cần
+* Review qua git
 
 
 ## Constraint
 
-Đảm bảo dữ liệu luôn hợp lệ.
+là các ràng buộc đảm bảo dữ liệu luôn hợp lệ và nhất quán
 
 * **PRIMARY KEY**: Khóa chính.
 * **FOREIGN KEY**: Khóa ngoại.
@@ -83,14 +127,7 @@ Quản lý thay đổi cấu trúc database bằng code.
 
 ## Index
 
-Index giúp tăng tốc truy vấn, giống như mục lục của một cuốn sách.
-
-### Tăng tốc
-
-* `WHERE`
-* `JOIN`
-* `ORDER BY`
-* `GROUP BY`
+Index giúp tăng tốc truy vấn bằng cách giảm số lượng bản ghi cần đọc, giống như mục lục của một cuốn sách
 
 ### Tại sao Index nhanh hơn?
 
